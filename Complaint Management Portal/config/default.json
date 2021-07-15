@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb://localhost/server",
+    "jwtSecret": "cms_myJstSecret"
+}
