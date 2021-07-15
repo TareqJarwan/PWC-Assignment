@@ -57,7 +57,7 @@ router.post('/', auth, (req, res) => {
 // @route PUT api/complaints/:id?action={accept/reject}
 // @desc Update the the status for the Complaint
 // @access Public
-router.put('/:id', auth, (req, res) => {
+router.put('/:id', (req, res) => {
     const { action } = req.query;
     Complaint.findById(req.params.id)
         .then(complaint => {

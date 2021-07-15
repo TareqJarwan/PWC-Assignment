@@ -11,7 +11,8 @@ const User = require('../../models/User');
 // @desc Register new user
 // @access Public
 router.post('/', (req, res) => {
-    const { firstName, lastName, email, password } = req.body;
+    const { firstName, lastName, email, password, role } = req.body;
+    console.log("Tareq", role);
 
     // simple validation
     if (!firstName || !lastName || !email || !password) {
@@ -23,7 +24,7 @@ router.post('/', (req, res) => {
         if (user) return res.status(400).json({ msg: 'User already exists' });
 
         const newUser = new User({
-            firstName, lastName, email, password
+            firstName, lastName, email, password, role
         });
 
         // Create salt & hash
