@@ -14,7 +14,7 @@ const ShowComplaints = ({getUserComplaints, acceptComplaint, isAdmin, rejectComp
         } else {
             getUserComplaints();
         }
-    }, [getUserComplaints, isAdmin]);
+    }, [getUserComplaints, getComplaints, isAdmin]);
 
     return (
         <div className="container h-100">

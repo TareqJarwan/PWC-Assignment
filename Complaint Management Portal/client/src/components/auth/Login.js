@@ -12,10 +12,6 @@ const Login = ({login, error}) => {
     const [password, setPassword] = useState("");
     const [errorMsg, setErrorMsg] = useState("");
 
-    function validateForm() {
-        return email.length > 0 && password.length > 0;
-    }
-
     const handleSubmit = (event) => {
         event.preventDefault();
 

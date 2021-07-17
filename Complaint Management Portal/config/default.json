@@ -1,4 +1,0 @@
-{
-    "mongoURI": "mongodb+srv://tjTest:tjTest@cluster0.wogbn.mongodb.net/complaints-management-system?retryWrites=true&w=majority",
-    "jwtSecret": "cms_myJstSecret"
-}

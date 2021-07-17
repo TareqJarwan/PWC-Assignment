@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require("cors");
-const config = require('config');
+
+require('dotenv').config();
 
 const app = express();
 
@@ -10,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 // DB Config
-const db = config.get("mongoURI");
+const db = process.env.MONGO_URI;
 
 // Connect to Mongo
 mongoose.set('useCreateIndex', true);
@@ -25,5 +26,5 @@ app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/complaints', require('./routes/api/complaints'));
 
-const port = process.env.PORT || 5000;
+const port = process.env.SERVER_PORT;
 app.listen(port, () => console.log(`Server started on port ${port}`));

@@ -16,13 +16,6 @@ const Signup = ({error, register}) => {
     const [isAdmin, setAdmin] = useState(false);
     const [errorMsg, setErrorMsg] = useState(null);
 
-    const validateForm = () => {
-        return firstName.length > 0
-            && lastName.length > 0
-            && email.length > 0
-            && password.length > 0;
-    }
-
     const handleSubmit = (event) => {
         event.preventDefault();
 
