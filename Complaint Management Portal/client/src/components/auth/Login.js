@@ -10,7 +10,7 @@ import {login} from '../../store/actions/authActions';
 const Login = ({login, error}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [errorMsg, setErrorMsg] = useState(null);
+    const [errorMsg, setErrorMsg] = useState("");
 
     function validateForm() {
         return email.length > 0 && password.length > 0;
@@ -33,9 +33,9 @@ const Login = ({login, error}) => {
     useEffect(() => {
         // Check for login error
         if (error.id === 'LOGIN_FAIL') {
-            setErrorMsg(error.msg || error.msg.msg);
+            setErrorMsg(error.msg.msg);
         } else {
-            setErrorMsg(null);
+            setErrorMsg("");
         }
     }, [error]);
 
@@ -43,7 +43,8 @@ const Login = ({login, error}) => {
         <div className="card mt-5 w-50 mx-auto">
             <article className="card-body">
                 <h4 className="card-title text-center mb-4 mt-1">Sign in</h4>
-                {errorMsg ? <Alert color="danger">{errorMsg}</Alert> : null}
+                {errorMsg.length > 0 ?
+                    <Alert color="danger">{errorMsg}</Alert> : null}
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>

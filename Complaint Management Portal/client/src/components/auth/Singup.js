@@ -54,7 +54,8 @@ const Signup = ({error, register}) => {
         <div className="card mt-5 w-50 mx-auto">
             <article className="card-body">
                 <h4 className="card-title text-center mb-4 mt-1">Registration</h4>
-                {errorMsg ? <Alert color="danger">{errorMsg}</Alert> : null}
+                {errorMsg && Object.keys(errorMsg).length !== 0 ?
+                    <Alert color="danger">{errorMsg}</Alert> : null}
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="firstName">First Name</label>
